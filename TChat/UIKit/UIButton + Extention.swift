@@ -35,7 +35,7 @@ extension UIButton {
     }
     
     func customizeGoogleButton() {
-          let googleLogo = UIImageView(image: #imageLiteral(resourceName: "plus"), contentMode: .scaleAspectFill)
+          let googleLogo = UIImageView(image: #imageLiteral(resourceName: "google"), contentMode: .scaleAspectFill)
           
           googleLogo.translatesAutoresizingMaskIntoConstraints = false
           
