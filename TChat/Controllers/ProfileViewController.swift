@@ -14,7 +14,7 @@ class ProfileViewController: UIViewController {
     let bgImage = UIImageView(image: #imageLiteral(resourceName: "fdgvb"), contentMode: .scaleAspectFill)
     let containerView = UIView()
     let imageView = UIImageView(image: #imageLiteral(resourceName: "profile"), contentMode: .scaleAspectFill)
-    let nameLabel = UILabel(text: "Peter Ben", font: .systemFont(ofSize: 20, weight: .light))
+    let nameLabel = UILabel(text: "Pider pan", font: .systemFont(ofSize: 20, weight: .light))
     let aboutMeLabel = UILabel(text: "blablablabla and blablablablabla and blabla and more blablabla", font: .systemFont(ofSize: 16, weight: .light))
     let myTextField = InsertableTextField()
     
