@@ -57,6 +57,7 @@
 		04EEA20D2460A7900006BBE1 /* MUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EEA20C2460A7900006BBE1 /* MUser.swift */; };
 		04EEA20F2460A7B10006BBE1 /* MMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EEA20E2460A7B10006BBE1 /* MMessage.swift */; };
 		04EEA2162460B7DD0006BBE1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04EEA2152460B7DD0006BBE1 /* GoogleService-Info.plist */; };
+		04EEA219246184660006BBE1 /* HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EEA218246184660006BBE1 /* HideKeyboard.swift */; };
 		56D1E98D56473FEEFAEC9167 /* Pods_TChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFEC07D41AE0AD0B424A83F3 /* Pods_TChat.framework */; };
 /* End PBXBuildFile section */
 
@@ -113,6 +114,7 @@
 		04EEA20C2460A7900006BBE1 /* MUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUser.swift; sourceTree = "<group>"; };
 		04EEA20E2460A7B10006BBE1 /* MMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMessage.swift; sourceTree = "<group>"; };
 		04EEA2152460B7DD0006BBE1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		04EEA218246184660006BBE1 /* HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboard.swift; sourceTree = "<group>"; };
 		6111EE03CAB47AC754E4DFE4 /* Pods-TChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TChat.debug.xcconfig"; path = "Target Support Files/Pods-TChat/Pods-TChat.debug.xcconfig"; sourceTree = "<group>"; };
 		BFBB5D7B33C2B59DD8B829A2 /* Pods-TChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TChat.release.xcconfig"; path = "Target Support Files/Pods-TChat/Pods-TChat.release.xcconfig"; sourceTree = "<group>"; };
 		EFEC07D41AE0AD0B424A83F3 /* Pods_TChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -254,6 +256,7 @@
 				04EEA1E62460A4AE0006BBE1 /* ButtonFormView.swift */,
 				04EEA1E82460A4CC0006BBE1 /* OneLineTextField.swift */,
 				04EEA1EA2460A4E20006BBE1 /* Bundle-Decotable.swift */,
+				04EEA218246184660006BBE1 /* HideKeyboard.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -476,6 +479,7 @@
 				04EEA1B92460A0650006BBE1 /* ListViewController.swift in Sources */,
 				04EEA20B2460A7750006BBE1 /* MChat.swift in Sources */,
 				04EEA1C42460A28C0006BBE1 /* SectionHeader.swift in Sources */,
+				04EEA219246184660006BBE1 /* HideKeyboard.swift in Sources */,
 				04EEA19524609E7F0006BBE1 /* SceneDelegate.swift in Sources */,
 				04EEA2092460A65A0006BBE1 /* AuthError.swift in Sources */,
 				04EEA1AC24609F810006BBE1 /* AuthService.swift in Sources */,

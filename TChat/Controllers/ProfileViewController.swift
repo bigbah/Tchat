@@ -11,8 +11,9 @@ import SDWebImage
 
 class ProfileViewController: UIViewController {
     
+    let bgImage = UIImageView(image: #imageLiteral(resourceName: "fdgvb"), contentMode: .scaleAspectFill)
     let containerView = UIView()
-    let imageView = UIImageView(image: #imageLiteral(resourceName: "images"), contentMode: .scaleAspectFill)
+    let imageView = UIImageView(image: #imageLiteral(resourceName: "profile"), contentMode: .scaleAspectFill)
     let nameLabel = UILabel(text: "Peter Ben", font: .systemFont(ofSize: 20, weight: .light))
     let aboutMeLabel = UILabel(text: "blablablabla and blablablablabla and blabla and more blablabla", font: .systemFont(ofSize: 16, weight: .light))
     let myTextField = InsertableTextField()
@@ -40,11 +41,14 @@ class ProfileViewController: UIViewController {
     }
     
     private func customizeElements() {
+        
+        bgImage.translatesAutoresizingMaskIntoConstraints = false
         containerView.translatesAutoresizingMaskIntoConstraints = false
         imageView.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         aboutMeLabel.translatesAutoresizingMaskIntoConstraints = false
         myTextField.translatesAutoresizingMaskIntoConstraints = false
+        
         aboutMeLabel.numberOfLines = 0
         containerView.backgroundColor = .mainWhite()
         containerView.layer.cornerRadius = 30
@@ -77,6 +81,7 @@ class ProfileViewController: UIViewController {
 extension ProfileViewController {
     
     private func setupConstraints() {
+        view.addSubview(bgImage)
         view.addSubview(imageView)
         view.addSubview(containerView)
         containerView.addSubview(nameLabel)
@@ -113,6 +118,13 @@ extension ProfileViewController {
             myTextField.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 24),
             myTextField.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -24),
                myTextField.heightAnchor.constraint(equalToConstant: 48)
+        ])
+        
+        NSLayoutConstraint.activate([
+            bgImage.topAnchor.constraint(equalTo: view.topAnchor),
+            bgImage.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            bgImage.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            bgImage.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
 }

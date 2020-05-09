@@ -12,7 +12,7 @@ class  SignUpViewController: UIViewController {
     
     //    let welcomeLable = UILabel(text: "WELCOME!", font: .avenir26())
         let welcomeImage = UIImageView(image: #imageLiteral(resourceName: "welcome"), contentMode: .scaleAspectFill)
-        let bgImage = UIImageView(image: #imageLiteral(resourceName: "fdgvb"), contentMode: .scaleAspectFill)
+        let bgImage = UIImageView(image: #imageLiteral(resourceName: "bg5"), contentMode: .scaleAspectFill)
 
         
         let emailLable = UILabel(text: "Email")
@@ -38,13 +38,19 @@ class  SignUpViewController: UIViewController {
         
         override func viewDidLoad() {
             super.viewDidLoad()
-
+            
+            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+            
+            hideKeyboardWhenTappedAround()
+            
             view.backgroundColor = .white
             setupConstrains()
             
             signUpButton.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
             loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         }
+    
         
         @objc private func signUpButtonTapped() {
             print(#function)

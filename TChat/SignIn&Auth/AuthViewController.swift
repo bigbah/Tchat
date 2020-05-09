@@ -11,7 +11,7 @@ import GoogleSignIn
 
 class AuthViewController: UIViewController {
     
-      let bgImage = UIImageView(image: #imageLiteral(resourceName: "fdgvb"), contentMode: .scaleAspectFill)
+      let bgImage = UIImageView(image: #imageLiteral(resourceName: "bg5"), contentMode: .scaleAspectFill)
         let logoImageView = UIImageView(image: #imageLiteral(resourceName: "bga1"), contentMode: .scaleAspectFit)
         let googleLabel = UILabel(text: "Get started with")
         let emailLabel = UILabel(text: "")
@@ -27,7 +27,7 @@ class AuthViewController: UIViewController {
             
         override func viewDidLoad() {
             super.viewDidLoad()
-            
+                        
             emailButton.customizeEmailButton()
             googleButton.customizeGoogleButton()
             view.backgroundColor = .mainWhite()

@@ -11,7 +11,7 @@ import GoogleSignIn
 
 class LoginViewController: UIViewController {
     
-     let bgImage = UIImageView(image: #imageLiteral(resourceName: "fdgvb"), contentMode: .scaleAspectFill)
+     let bgImage = UIImageView(image: #imageLiteral(resourceName: "bg5"), contentMode: .scaleAspectFill)
     //    let welcomeLable = UILabel(text: "Welcome back!", font: .avenir26())
         let welcomeImage = UIImageView(image: #imageLiteral(resourceName: "welcome back"), contentMode: .scaleAspectFill)
         let loginWithLable = UILabel(text: "Login with:")
@@ -38,6 +38,11 @@ class LoginViewController: UIViewController {
         
         override func viewDidLoad() {
             super.viewDidLoad()
+            
+            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+            
+            hideKeyboardWhenTappedAround()
             
             googleButton.customizeGoogleButton()
             view.backgroundColor = .white

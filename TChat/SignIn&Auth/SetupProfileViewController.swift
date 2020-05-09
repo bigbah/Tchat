@@ -12,10 +12,13 @@ import SDWebImage
 
 class  SetupProfileViewController: UIViewController {
     
-     let fullImageView = AddPhotoView()
+        let fullImageView = AddPhotoView()
         
-        let welcomeLable = UILabel(text: "Set up profile", font: .avenir26())
-        
+        let bgImage = UIImageView(image: #imageLiteral(resourceName: "bg5"), contentMode: .scaleAspectFill)
+    
+//        let welcomeLable = UILabel(text: "Set up profile", font: .avenir26())
+        let setUpProfileImage = UIImageView(image: #imageLiteral(resourceName: "setUpProfile"), contentMode: .scaleAspectFill)
+    
         let fullNameLable = UILabel(text: "Full name")
         let aboutMeLable = UILabel(text: "About me")
         let sexlLable = UILabel(text: "Sex")
@@ -24,7 +27,7 @@ class  SetupProfileViewController: UIViewController {
         let aboutMeTextField = OneLineTextField(font: .avenir20())
         let sexSegmentedControl = UISegmentedControl(first: "Male", second: "Femail")
         
-        let goToChatsButton = UIButton(title: "Go to chats!", titleColor: .white, backgroundColor: .buttonDark(), cornerrRadius: 4)
+        let goToChatsButton = UIButton(title: "Go to chats!", titleColor: #colorLiteral(red: 0.0980392918, green: 0.3725489676, blue: 0.1568627357, alpha: 1), backgroundColor: #colorLiteral(red: 0.9176471829, green: 0.9058822393, blue: 0.6705883145, alpha: 1), cornerrRadius: 10)
         
         private let currentUser: User
         
@@ -47,6 +50,11 @@ class  SetupProfileViewController: UIViewController {
         
         override func viewDidLoad() {
             super.viewDidLoad()
+            
+            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+            
+            hideKeyboardWhenTappedAround()
             
             view.backgroundColor = .white
             setupConstrains()
@@ -106,30 +114,47 @@ class  SetupProfileViewController: UIViewController {
                                         axis: .vertical,
                                         spacing: 40)
             
-            welcomeLable.translatesAutoresizingMaskIntoConstraints = false
+            bgImage.translatesAutoresizingMaskIntoConstraints = false
+//            welcomeLable.translatesAutoresizingMaskIntoConstraints = false
             fullImageView.translatesAutoresizingMaskIntoConstraints = false
             stackView.translatesAutoresizingMaskIntoConstraints = false
+            setUpProfileImage.translatesAutoresizingMaskIntoConstraints = false
             
-            view.addSubview(welcomeLable)
+            view.addSubview(bgImage)
+//            view.addSubview(welcomeLable)
             view.addSubview(fullImageView)
             view.addSubview(stackView)
+            view.addSubview(setUpProfileImage)
             
+//            NSLayoutConstraint.activate([
+//                welcomeLable.topAnchor.constraint(equalTo: view.topAnchor, constant: 80),
+//                welcomeLable.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+//            ])
             NSLayoutConstraint.activate([
-                welcomeLable.topAnchor.constraint(equalTo: view.topAnchor, constant: 80),
-                welcomeLable.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+                fullImageView.topAnchor.constraint(equalTo: setUpProfileImage.bottomAnchor, constant: 40),
+                fullImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                fullImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 140)
             ])
-            NSLayoutConstraint.activate([
-                fullImageView.topAnchor.constraint(equalTo: welcomeLable.bottomAnchor, constant: 40),
-                fullImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-            ])
-            NSLayoutConstraint.activate([
-                fullImageView.topAnchor.constraint(equalTo: welcomeLable.bottomAnchor, constant: 40),
-                fullImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-            ])
+//            NSLayoutConstraint.activate([
+//                fullImageView.topAnchor.constraint(equalTo: setUpProfileImage.bottomAnchor, constant: 40),
+//                fullImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+//            ])
             NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: fullImageView.bottomAnchor, constant: 40),
-            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
-            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
+            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60),
+            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60)
+            ])
+            NSLayoutConstraint.activate([
+            bgImage.topAnchor.constraint(equalTo: view.topAnchor),
+            bgImage.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            bgImage.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            bgImage.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            ])
+            NSLayoutConstraint.activate([
+            setUpProfileImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 60),
+            setUpProfileImage.widthAnchor.constraint(equalToConstant: 70),
+            setUpProfileImage.heightAnchor.constraint(equalToConstant: 70),
+            setUpProfileImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             ])
         }
     }

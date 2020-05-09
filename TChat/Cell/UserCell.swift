@@ -20,7 +20,7 @@ class UserCell: UICollectionViewCell, SelfConfiguringCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = .white
+        backgroundColor = .bgImage()
         setupConstraints()
         
         self.layer.cornerRadius = 4

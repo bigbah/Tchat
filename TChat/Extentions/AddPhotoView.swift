@@ -14,11 +14,11 @@ class AddPhotoView: UIView {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
 //        imageView.image = #imageLiteral(resourceName: "images")
-        imageView.image = UIImage(systemName: "person.crop.circle.fill")
-        imageView.contentMode = .scaleAspectFit
+        imageView.image = UIImage(named: "profile")
+        imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
-        imageView.layer.borderColor = UIColor.black.cgColor
-        imageView.layer.borderWidth = 1
+//        imageView.layer.borderColor = UIColor.yellow.cgColor
+//        imageView.layer.borderWidth = 1
         return imageView
     }()
     
@@ -43,14 +43,15 @@ class AddPhotoView: UIView {
         NSLayoutConstraint.activate([
             circleImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
             circleImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
-            circleImageView.widthAnchor.constraint(equalToConstant: 100),
-            circleImageView.heightAnchor.constraint(equalToConstant: 100)
+            circleImageView.widthAnchor.constraint(equalToConstant: 150),
+            circleImageView.heightAnchor.constraint(equalToConstant: 150)
         ])
         NSLayoutConstraint.activate([
-            plusButton.leadingAnchor.constraint(equalTo: circleImageView.trailingAnchor, constant: 16),
-            plusButton.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            plusButton.widthAnchor.constraint(equalToConstant: 30),
-            plusButton.heightAnchor.constraint(equalToConstant: 30)
+            plusButton.leadingAnchor.constraint(equalTo: circleImageView.trailingAnchor, constant: 8),
+//            plusButton.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            plusButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 5),
+            plusButton.widthAnchor.constraint(equalToConstant: 55),
+            plusButton.heightAnchor.constraint(equalToConstant: 45)
         ])
         
         self.bottomAnchor.constraint(equalTo: circleImageView.bottomAnchor).isActive = true

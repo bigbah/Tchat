@@ -25,4 +25,8 @@ extension UIColor {
     static func textFieldLight() -> UIColor {
         return #colorLiteral(red: 0.8862746358, green: 0.8862745166, blue: 0.8862746358, alpha: 1)
     }
+    
+    static func bgImage() -> UIColor {
+        return UIColor(patternImage: UIImage(named: "bg-1")!)
+    }
 }

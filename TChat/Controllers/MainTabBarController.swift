@@ -12,12 +12,12 @@ class MainTabBarController: UITabBarController {
     
     private let currentUser: MUser
     
-    init(currentUser: MUser = MUser(username: "any",
-                                    email: "any",
-                                    avatarStringURL: "any",
-                                    description: "any",
-                                    sex: "any",
-                                    id: "any")) {
+    init(currentUser: MUser = MUser(username: "",
+                                    email: "",
+                                    avatarStringURL: "",
+                                    description: "",
+                                    sex: "",
+                                    id: "")) {
         self.currentUser = currentUser
         super.init(nibName: nil, bundle: nil)
     }
@@ -42,7 +42,7 @@ class MainTabBarController: UITabBarController {
         
         viewControllers = [
             generateNavigationController(rootViewController: peopleViewController, title: "People", image: peopleImage),
-            generateNavigationController(rootViewController: listViewController, title: "Conversations", image: convImage)
+            generateNavigationController(rootViewController: listViewController, title: "Chats", image: convImage)
         ]
     }
     

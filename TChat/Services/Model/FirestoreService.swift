@@ -52,7 +52,7 @@ class FirestoreService {
             return
         }
         
-        guard avatarImage != #imageLiteral(resourceName: "images") else {
+        guard avatarImage != #imageLiteral(resourceName: "profile") else {
             completion(.failure(UserError.photoNotExist))
             return
         }

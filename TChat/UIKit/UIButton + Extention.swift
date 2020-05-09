@@ -15,7 +15,7 @@ extension UIButton {
                      backgroundColor: UIColor,
                      font: UIFont? = .avenir20(),
                      isShadow: Bool = false,
-                     cornerrRadius: CGFloat = 4) {
+                     cornerrRadius: CGFloat = 10) {
         self.init(type: .system)
         
         self.setTitle(title, for: .normal)
@@ -51,7 +51,7 @@ extension UIButton {
       }
       
       func customizeEmailButton() {
-          let emailLogo = UIImageView(image: #imageLiteral(resourceName: "Blue-Email-PNG"), contentMode: .scaleAspectFill)
+          let emailLogo = UIImageView(image: #imageLiteral(resourceName: "Blue"), contentMode: .scaleAspectFill)
           
           emailLogo.translatesAutoresizingMaskIntoConstraints = false
           

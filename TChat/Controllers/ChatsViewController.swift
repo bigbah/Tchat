@@ -39,6 +39,7 @@ class ChatsViewController: MessagesViewController {
             super.viewDidLoad()
             
             configureMessageInputBar()
+
             
             if let layout = messagesCollectionView.collectionViewLayout as? MessagesCollectionViewFlowLayout {
                 layout.textMessageSizeCalculator.outgoingAvatarSize = .zero
@@ -228,11 +229,11 @@ class ChatsViewController: MessagesViewController {
     // MARK: - MessagesDisplayDelegate
     extension ChatsViewController: MessagesDisplayDelegate {
         func backgroundColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
-            return isFromCurrentSender(message: message) ?  #colorLiteral(red: 0.4470589161, green: 0.7529411912, blue: 0.5725491643, alpha: 1) : #colorLiteral(red: 0.9058825374, green: 0.9686275125, blue: 0.7607844472, alpha: 1)
+            return isFromCurrentSender(message: message) ? #colorLiteral(red: 0.8470589519, green: 0.9215685725, blue: 1, alpha: 1) : #colorLiteral(red: 0.9372549653, green: 0.9372548461, blue: 0.9372549653, alpha: 1)
         }
         
         func textColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
-            return isFromCurrentSender(message: message) ? .white : #colorLiteral(red: 0.2392156863, green: 0.2392156863, blue: 0.2392156863, alpha: 1)
+            return isFromCurrentSender(message: message) ? .black : #colorLiteral(red: 0.2392156863, green: 0.2392156863, blue: 0.2392156863, alpha: 1)
         }
         
         func configureAvatarView(_ avatarView: AvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
@@ -244,7 +245,7 @@ class ChatsViewController: MessagesViewController {
         }
         
         func messageStyle(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageStyle {
-            return .bubbleOutline(.black)
+            return .bubble
         }
         
     }
